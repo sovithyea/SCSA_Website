@@ -62,7 +62,6 @@ function AppHeader(props) {
                 <Button component={Link} to="/">Home</Button>
                 <Button component={Link} to="/aboutus">About Us</Button>
                 <Button component={Link} to="/events">Events</Button>
-                <Button variant="contained" size="small" component={Link} to="/">Sign in</Button>
                 <IconButton aria-label="toggle dark mode" onClick={toggleMode} sx={{ ml: 1 }}>
                     {mode === 'light' ? <DarkModeIcon /> : <LightModeIcon />}
                 </IconButton>
