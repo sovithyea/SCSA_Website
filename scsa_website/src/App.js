@@ -1,11 +1,8 @@
 // React hooks
-import { useMemo } from 'react';
-import { useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 // Router
-import { Routes } from 'react-router-dom';
-import { Route } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import { Routes, Route, Link } from 'react-router-dom';
 
 // MUI components
 import AppBar from '@mui/material/AppBar';
@@ -17,8 +14,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Container from '@mui/material/Container';
 import IconButton from '@mui/material/IconButton';
 import useMediaQuery from '@mui/material/useMediaQuery';
-import { ThemeProvider } from '@mui/material/styles';
-import { createTheme } from '@mui/material/styles';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
 
 // Icons
 import DarkModeIcon from '@mui/icons-material/DarkMode';
@@ -28,7 +24,7 @@ import LightModeIcon from '@mui/icons-material/LightMode';
 import './App.css';
 
 export default function App() {
-    // Theme setup
+    // Theme setup (keeps your dark mode)
     const prefersDark = useMediaQuery('(prefers-color-scheme: dark)');
     const [mode, setMode] = useState(prefersDark ? 'dark' : 'light');
     const theme = useMemo(() => createTheme({ palette: { mode } }), [mode]);
@@ -46,10 +42,15 @@ export default function App() {
     );
 }
 
+// helper: sets the browser tab title
+function usePageTitle(title) {
+    useEffect(() => {
+        document.title = title;
+    }, [title]);
+}
+
 // App bar with nav buttons and routing
-function AppHeader(props) {
-    const mode = props.mode;
-    const setMode = props.setMode;
+function AppHeader({ mode, setMode }) {
     const toggleMode = () => setMode((m) => (m === 'light' ? 'dark' : 'light'));
 
     return (
@@ -72,6 +73,7 @@ function AppHeader(props) {
 
 // Home page
 function HomePage() {
+    usePageTitle('Home | SCSA'); // updates tab on route
     return (
         <Container maxWidth="md" sx={{ py: 6 }}>
             <Typography variant="h4" sx={{ mb: 2 }}>Home Page</Typography>
@@ -82,6 +84,7 @@ function HomePage() {
 
 // About Us Page
 function AboutPage() {
+    usePageTitle('About Us | SCSA'); // <-- updates tab on route
     return (
         <Container maxWidth="md" sx={{ py: 6 }}>
             <Typography variant="h4" sx={{ mb: 2 }}>About Us Page</Typography>
@@ -92,6 +95,7 @@ function AboutPage() {
 
 // Events Page
 function EventsPage() {
+    usePageTitle('Events | SCSA'); // updates tab on route
     return (
         <Container maxWidth="md" sx={{ py: 6 }}>
             <Typography variant="h4" sx={{ mb: 2 }}>Events Section</Typography>
@@ -99,5 +103,3 @@ function EventsPage() {
         </Container>
     );
 }
-
-
