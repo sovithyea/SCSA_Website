@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea2642d4-1254-4efe-ae5a-dcafb198e475" name="Changes" comment="added picture to tab, PageTitle Function">
-      <change afterPath="$PROJECT_DIR$/scsa_website/public/scsa_banner.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scsa_website/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/scsa_website/public/index.html" afterDir="false" />
+    <list default="true" id="ea2642d4-1254-4efe-ae5a-dcafb198e475" name="Changes" comment="added our color, banner picture, font color">
+      <change afterPath="$PROJECT_DIR$/scsa_website/public/group_pic.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scsa_website/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/scsa_website/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scsa_website/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/scsa_website/src/App.js" afterDir="false" />
     </list>
@@ -59,6 +58,7 @@
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\prach\OneDrive - Swinburne University\Projects\Personal Repositories\SCSA_Website\scsa_website\public" />
+      <recent name="C:\Users\prach\OneDrive - Swinburne University\Projects\Personal Repositories\SCSA_Website\scsa_website\src" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -76,7 +76,7 @@
       <option name="presentableId" value="Default" />
       <updated>1760617174945</updated>
       <workItem from="1760617176222" duration="2838000" />
-      <workItem from="1760620077087" duration="7916000" />
+      <workItem from="1760620077087" duration="9287000" />
     </task>
     <task id="LOCAL-00001" summary="added gitignore">
       <option name="closed" value="true" />
@@ -126,7 +126,15 @@
       <option name="project" value="LOCAL" />
       <updated>1760622320375</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="added our color, banner picture, font color">
+      <option name="closed" value="true" />
+      <created>1760628099916</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1760628099916</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -138,6 +146,7 @@
     <MESSAGE value="change name to scsa_website" />
     <MESSAGE value="bare bones website with main, about us, events" />
     <MESSAGE value="added picture to tab, PageTitle Function" />
-    <option name="LAST_COMMIT_MESSAGE" value="added picture to tab, PageTitle Function" />
+    <MESSAGE value="added our color, banner picture, font color" />
+    <option name="LAST_COMMIT_MESSAGE" value="added our color, banner picture, font color" />
   </component>
 </project>

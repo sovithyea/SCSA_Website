@@ -10,13 +10,9 @@
 }
 
 /* light mode hero (red background around SCSA SWINBURNE) */
-body[data-theme="light"] .hero {
-    background-color: #ffffff; /* white main background */
-}
-
 body[data-theme="light"] .hero .hero-title > span {
     background: #cc2f27; /* red background for the title in light mode */
-    color: #000000; /* white text */
+    color: #000000; /* black text */
 }
 
 /* dark mode version (body[data-theme="dark"] is set in App.js) */
@@ -24,18 +20,16 @@ body[data-theme="dark"] .hero {
     background-color: #000000; /* black background for the hero in dark mode */
 }
 
+/* dark mode hero title */
 body[data-theme="dark"] .hero .hero-title > span {
     background: #cc2f27; /* dark red for the title */
     color: #ffffff; /* white text */
 }
 
-/* small welcome line */
-
-body[data-theme="dark"] .hero-welcome > span {
-    font-weight: 1000 !important;
-    font-style: oblique;
-    background: #cc2f27; /* dark red for the title */
-    color: #ffffff; /* white text */
+/* Do NOT change the .hero-welcome */
+.hero-welcome {
+    color: var(--mui-palette-text-secondary, #6b7280);
+    font-weight: 700 !important;
 }
 
 /* big title banner */
@@ -104,7 +98,7 @@ body[data-theme="light"] .bottom-part {
 
 /* Main background is black for dark mode, dark red at the bottom */
 body[data-theme="dark"] .main-content {
-    background-color: #000000; /* black background */
+    background-color: #000000; /* black background for dark mode */
 }
 
 body[data-theme="dark"] .bottom-part {
@@ -114,6 +108,21 @@ body[data-theme="dark"] .bottom-part {
 /* ensure transition is smooth */
 body {
     transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Fade-in animation only for SCSA SWINBURNE box */
+.hero-title > span {
+    animation: fadeIn 2s ease-out; /* Apply fade-in effect */
+}
+
+/* Define fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 /* styling the hero section text */

@@ -106,7 +106,7 @@ function HomePage() {
                 </div>
 
                 <div className="hero-photo">
-                    <img src="/group.jpg" alt="SCSA Committee group" />
+                    <img src="/group_pic.png" alt="SCSA Committee group" />
                 </div>
             </Box>
 
