@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea2642d4-1254-4efe-ae5a-dcafb198e475" name="Changes" comment="bare bones website with main, about us, events, dark mode">
-      <change afterPath="$PROJECT_DIR$/scsa_website/public/scsa_logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scsa_website/public/scsa_logo_no_bg.png" afterDir="false" />
+    <list default="true" id="ea2642d4-1254-4efe-ae5a-dcafb198e475" name="Changes" comment="added picture to tab, PageTitle Function">
+      <change afterPath="$PROJECT_DIR$/scsa_website/public/scsa_banner.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scsa_website/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/scsa_website/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scsa_website/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/scsa_website/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scsa_website/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/scsa_website/src/App.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -76,7 +76,7 @@
       <option name="presentableId" value="Default" />
       <updated>1760617174945</updated>
       <workItem from="1760617176222" duration="2838000" />
-      <workItem from="1760620077087" duration="2198000" />
+      <workItem from="1760620077087" duration="7916000" />
     </task>
     <task id="LOCAL-00001" summary="added gitignore">
       <option name="closed" value="true" />
@@ -118,7 +118,15 @@
       <option name="project" value="LOCAL" />
       <updated>1760621007265</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="added picture to tab, PageTitle Function">
+      <option name="closed" value="true" />
+      <created>1760622320375</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1760622320375</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -129,6 +137,7 @@
     <MESSAGE value="init commit" />
     <MESSAGE value="change name to scsa_website" />
     <MESSAGE value="bare bones website with main, about us, events" />
-    <option name="LAST_COMMIT_MESSAGE" value="bare bones website with main, about us, events" />
+    <MESSAGE value="added picture to tab, PageTitle Function" />
+    <option name="LAST_COMMIT_MESSAGE" value="added picture to tab, PageTitle Function" />
   </component>
 </project>

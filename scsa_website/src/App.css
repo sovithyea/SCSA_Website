@@ -1,1 +1,142 @@
-/*styles the apps frame (header, sidebar, containers, footers)*/
+/* ====== HERO SECTION ====== */
+
+/* light mode hero background */
+.hero {
+    position: relative;
+    overflow: hidden;
+    padding-top: 48px;   /* pt */
+    padding-bottom: 80px;/* pb */
+    background-color: #ffffff; /* white background for main content */
+}
+
+/* light mode hero (red background around SCSA SWINBURNE) */
+body[data-theme="light"] .hero {
+    background-color: #ffffff; /* white main background */
+}
+
+body[data-theme="light"] .hero .hero-title > span {
+    background: #cc2f27; /* red background for the title in light mode */
+    color: #000000; /* white text */
+}
+
+/* dark mode version (body[data-theme="dark"] is set in App.js) */
+body[data-theme="dark"] .hero {
+    background-color: #000000; /* black background for the hero in dark mode */
+}
+
+body[data-theme="dark"] .hero .hero-title > span {
+    background: #cc2f27; /* dark red for the title */
+    color: #ffffff; /* white text */
+}
+
+/* small welcome line */
+
+body[data-theme="dark"] .hero-welcome > span {
+    font-weight: 1000 !important;
+    font-style: oblique;
+    background: #cc2f27; /* dark red for the title */
+    color: #ffffff; /* white text */
+}
+
+/* big title banner */
+.hero-title {
+    display: flex;
+    justify-content: center;
+    margin-top: 8px;
+}
+
+.hero-title > span {
+    display: inline-block;
+    padding: 10px 16px;
+    border-radius: 6px;
+    transform: rotate(-1.5deg);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.08);
+    font-weight: 900;
+    font-size: clamp(28px, 6vw, 56px);
+    letter-spacing: -0.02em;
+}
+
+/* Hero image container */
+.hero-photo {
+    max-width: 900px;
+    margin: 24px auto 0;
+    border-radius: 32px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+}
+
+.hero-photo img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+/* soft blurred glow behind the image */
+.hero-glow {
+    pointer-events: none;
+    position: absolute;
+    left: 5%;
+    right: 5%;
+    bottom: -64px;
+    height: 180px;
+    border-radius: 48px;
+    filter: blur(24px);
+    background: linear-gradient(90deg, #FEF3C7, #FFE4E6, #FECACA);
+    opacity: 0.7;
+}
+
+/* ====== BACKGROUND COLORS ====== */
+body[data-theme="light"] {
+    background-color: #ffffff; /* white background for light mode */
+    color: #111827; /* dark text */
+}
+
+/* Main background is white for light mode, red at the bottom */
+body[data-theme="light"] .main-content {
+    background-color: #ffffff; /* white background */
+}
+
+body[data-theme="light"] .bottom-part {
+    background-color: #cc2f27; /* red bottom part */
+}
+
+/* Main background is black for dark mode, dark red at the bottom */
+body[data-theme="dark"] .main-content {
+    background-color: #000000; /* black background */
+}
+
+body[data-theme="dark"] .bottom-part {
+    background-color: #cc2f27; /* dark red bottom part */
+}
+
+/* ensure transition is smooth */
+body {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* styling the hero section text */
+.hero {
+    padding-top: 60px;
+    text-align: center;
+}
+
+.hero-title span {
+    font-weight: 900;
+    font-size: clamp(28px, 6vw, 56px);
+}
+
+.hero-photo {
+    max-width: 900px;
+    margin: 24px auto 0;
+    border-radius: 32px;
+    overflow: hidden;
+}
+
+.hero-photo img {
+    width: 100%;
+    display: block;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
