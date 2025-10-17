@@ -26,11 +26,17 @@ body[data-theme="dark"] .hero .hero-title > span {
     color: #ffffff; /* white text */
 }
 
-/* Do NOT change the .hero-welcome */
+/* Make the 'Welcome to' line larger and bolder */
 .hero-welcome {
-    color: var(--mui-palette-text-secondary, #6b7280);
-    font-weight: 700 !important;
+    /* responsive size: min 18px, scales up, max ~28px */
+    font-size: clamp(18px, 5vw, 28px);
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    margin-bottom: 16px; /* a bit more breathing room */
+    line-height: 1.2;
+    font-style: oblique;
 }
+
 
 /* big title banner */
 .hero-title {
@@ -149,3 +155,8 @@ body {
     aspect-ratio: 16 / 9;
     object-fit: cover;
 }
+
+/* cleaner hover for header nav (works in both themes) */
+.nav-link { text-transform: none; font-weight: 600; letter-spacing: .01em; padding: 8px 12px; border-radius: 8px; }
+.nav-link:hover { background-color: rgba(255,255,255,.08); }
+body[data-theme="light"] .nav-link:hover { background-color: rgba(0,0,0,.06); }

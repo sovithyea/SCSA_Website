@@ -2,7 +2,8 @@
 import { useEffect, useMemo, useState } from 'react';
 
 // Router
-import { Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route, Link, useLocation } from 'react-router-dom';
+
 
 // MUI components
 import AppBar from '@mui/material/AppBar';
@@ -53,52 +54,85 @@ function usePageTitle(title) {
 
 // header with navigation and dark mode toggle
 function AppHeader({ mode, setMode }) {
-    // toggles between light and dark
+    // toggle light/dark
     const toggleMode = () => setMode((m) => (m === 'light' ? 'dark' : 'light'));
 
-    // header styles based on mode
+    // current route
+    const { pathname } = useLocation();
+
+    // header colors (unchanged)
     const headerStyle =
         mode === 'light'
-            ? {
-                backgroundColor: '#253c97', // Blue for light mode
-                color: '#ffffff',
-                boxShadow: '0px 2px 10px rgba(0, 0, 0, 0.15)', // shadow for light mode
-            }
-            : {
-                backgroundColor: '#253c97', // Blue for dark mode
-                color: '#ffffff',
-                borderBottom: '1px solid rgba(255, 255, 255, 0.3)', // white line for dark mode
-            };
+            ? { backgroundColor: '#253c97', color: '#ffffff', boxShadow: '0px 2px 10px rgba(0,0,0,0.15)' }
+            : { backgroundColor: '#253c97', color: '#ffffff', borderBottom: '1px solid rgba(255,255,255,0.3)' };
+
+    // active: light=black, dark=white | inactive: light=white, dark=black
+    const navSx = (to) => {
+        const active = pathname === to;
+        const color = active
+            ? (mode === 'light' ? '#000000' : '#FFFFFF')
+            : (mode === 'light' ? '#FFFFFF' : '#000000');
+
+        return {
+            color,
+            fontWeight: active ? 800 : 600,
+            opacity: 1,
+            px: 1.25,
+            borderRadius: 1,
+            transition: 'background-color .2s ease, opacity .2s ease',
+            '&:hover': {
+                backgroundColor: mode === 'light' ? 'rgba(0,0,0,.06)' : 'rgba(255,255,255,.08)',
+            },
+        };
+    };
 
     return (
         <>
             <AppBar position="fixed" elevation={0} sx={headerStyle}>
-                <Toolbar sx={{ gap: 2 }}>
-                    {/* Replace text with logo image */}
-                    <img src="/scsa_banner.png" alt="SCSA Logo" style={{ height: '50px' }} />
-                    <Box sx={{ flex: 1 }} />
-                    <Button component={Link} to="/" sx={{ color: 'inherit' }}>Home</Button>
-                    <Button component={Link} to="/aboutus" sx={{ color: 'inherit' }}>About Us</Button>
-                    <Button component={Link} to="/events" sx={{ color: 'inherit' }}>Events</Button>
-                    <IconButton aria-label="toggle dark mode" onClick={toggleMode} sx={{ ml: 1, color: 'inherit' }}>
-                        {mode === 'light' ? <DarkModeIcon /> : <LightModeIcon />}
-                    </IconButton>
+                <Toolbar sx={{ minHeight: 80, px: 3 }}>
+                    <Box
+                        sx={{
+                            width: '100%',
+                            maxWidth: 1200,
+                            mx: 'auto',
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: 20,
+                        }}
+                    >
+                        {/* make the banner clickable to go home */}
+                        <Box component={Link} to="/" aria-label="Go to Home" sx={{ display: 'inline-flex', alignItems: 'center' }}>
+                            <img src="/scsa_banner.png" alt="SCSA Logo" style={{ height: 56, display: 'block', cursor: 'pointer' }} />
+                        </Box>
+
+                        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, ml: 'auto' }}>
+                            {/* FIXED paths so they match your Routes (/, /aboutus, /events) */}
+                            <Button component={Link} to="/" sx={navSx('/')}>Home</Button>
+                            <Button component={Link} to="/aboutus" sx={navSx('/aboutus')}>About Us</Button>
+                            <Button component={Link} to="/events" sx={navSx('/events')}>Events</Button>
+
+                            <IconButton aria-label="toggle dark mode" onClick={toggleMode} sx={{ ml: 0.5, color: 'inherit' }}>
+                                {mode === 'light' ? <DarkModeIcon /> : <LightModeIcon />}
+                            </IconButton>
+                        </Box>
+                    </Box>
                 </Toolbar>
             </AppBar>
 
-            {/* spacer */}
-            <Toolbar />
+            {/* spacer equals header height */}
+            <Toolbar sx={{ minHeight: 80 }} />
         </>
     );
 }
+
 // Home page
 function HomePage() {
     usePageTitle('Home | SCSA'); // updates tab title
     return (
         <Container maxWidth={false} disableGutters>
             <Box className="hero" id="home">
-                <Typography className="hero-welcome" variant="subtitle2" align="center">
-                    Welcome to
+                <Typography className="hero-welcome" variant="h3" align="center">
+                    WELCOME TO
                 </Typography>
 
                 <div className="hero-title">
