@@ -160,3 +160,18 @@ body {
 .nav-link { text-transform: none; font-weight: 600; letter-spacing: .01em; padding: 8px 12px; border-radius: 8px; }
 .nav-link:hover { background-color: rgba(255,255,255,.08); }
 body[data-theme="light"] .nav-link:hover { background-color: rgba(0,0,0,.06); }
+
+/* Make hero spacing tighter on small screens */
+@media (max-width: 600px) {
+    .hero { padding-top: 36px; padding-bottom: 40px; }
+    .hero-welcome { font-size: clamp(18px, 4.6vw, 24px); margin-bottom: 12px; }
+    .hero-title > span { padding: 10px 14px; border-radius: 10px; }
+    .hero-photo { margin-top: 16px; border-radius: 16px; }
+    .bottom-part { padding-top: 40px; padding-bottom: 40px; }
+}
+
+/* Slightly larger cap for medium screens */
+@media (min-width: 600px) and (max-width: 900px) {
+    .hero-welcome { font-size: clamp(20px, 3.4vw, 26px); }
+    .hero-title > span { font-size: clamp(28px, 5vw, 40px); }
+}
